@@ -42,11 +42,14 @@ public class Build implements Runnable {
 			outputStream.start();
 			
 			
-			//@SuppressWarnings("unused")
-			//int exitval = proc.waitFor();
+			
+			int exitval = proc.waitFor();
 			
 			
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
