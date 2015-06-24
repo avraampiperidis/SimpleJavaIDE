@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import org.fxmisc.richtext.*?>
+
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="simpleJavaIde.FXMLDocumentController">
+   <top>
+      <VBox prefHeight="67.0" prefWidth="600" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#newClassFile" text="new class" />
+                        <MenuItem mnemonicParsing="false" onAction="#newInterface" text="new Interface" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#openfile" text="open" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#savefile" text="save all" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem id="close" mnemonicParsing="false" onAction="#closeprogram" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" onAction="#cleanButton" text="Delete" />
+                  </items>
+                </Menu>
+                  
+                  <Menu mnemonicParsing="false" text="Tools">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#buildFile" text="build">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/buildsmall.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#cleanButton" text="clean" />
+                        <Menu mnemonicParsing="false" text="import">
+                          <items>
+                               <MenuItem fx:id="javaappletid" mnemonicParsing="false" onAction="#javaapplet" text="java.applet.*;" />
+                                 <SeparatorMenuItem mnemonicParsing="false" />
+                               <MenuItem fx:id="javaawtid" mnemonicParsing="false" onAction="#javaawt" text="java.awt.*;" />
+                               <MenuItem fx:id="javaawtcid" mnemonicParsing="false" onAction="#javaawtc" text="java.awt.color.*;" />
+                               <MenuItem fx:id="javaawtdid" mnemonicParsing="false" onAction="#javaawtd" text="java.awt.datatransfer.*;" />
+                               <MenuItem fx:id="javaawtdndid" mnemonicParsing="false" onAction="#javaawtdnd" text="java.awt.dnd.*;" />
+                               <MenuItem fx:id="javaawteventid" mnemonicParsing="false" onAction="#javaawtevent" text="java.awt.event.*;" />
+                                 <SeparatorMenuItem mnemonicParsing="false" />
+                               <MenuItem fx:id="javaioid" mnemonicParsing="false" onAction="#javaio" text="java.io.*;" />
+                               <MenuItem fx:id="javalangid" mnemonicParsing="false" onAction="#javalang" text="java.lang.*;" />
+                               <MenuItem fx:id="javamathid" mnemonicParsing="false" onAction="#javamath" text="java.math.*;" />
+                               <MenuItem fx:id="javanetid" mnemonicParsing="false" onAction="#javanet" text="java.net.*;" />
+                                 <SeparatorMenuItem mnemonicParsing="false" />
+                               <MenuItem fx:id="javanioid" mnemonicParsing="false" onAction="#javanio" text="java.nio.*;" />
+                               <MenuItem fx:id="javaniocid" mnemonicParsing="false" onAction="#javanioc" text="java.nio.channels.*;" />
+                               <MenuItem fx:id="javaniofid" mnemonicParsing="false" onAction="#javaniof" text="java.nio.file.*;" />
+                               <SeparatorMenuItem mnemonicParsing="false" />
+                               <MenuItem fx:id="javasecid" mnemonicParsing="false" onAction="#javasec" text="java.security.*;" />
+                               <SeparatorMenuItem mnemonicParsing="false" />
+                               <MenuItem fx:id="javasqlid" mnemonicParsing="false" onAction="#javasql" text="java.sql.*;" />
+                               <MenuItem fx:id="javatxtid" mnemonicParsing="false" onAction="#javatxt" text="java.text.*;" />
+                               <MenuItem fx:id="javatimeid" mnemonicParsing="false" onAction="#javatime" text="java.time.*;" />
+                               <SeparatorMenuItem mnemonicParsing="false" />
+                               <MenuItem fx:id="javautilid" mnemonicParsing="false" onAction="#javautil" text="java.util.*;" />
+                               
+                          </items>
+                        </Menu>
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Run">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#buildAndRun" text="run">
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/runsmall.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#setArguments" text="set main(String[] args) arguments" />
+                        
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" onAction="#aboutwindow"/>
+                  </items>
+                </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                <Button fx:id="newfile" mnemonicParsing="false" onAction="#newClassFile">
+                <graphic>
+                        <ImageView fx:id="newfilebutton" fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/newfilebutton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="save" mnemonicParsing="false" onAction="#savefile">
+                  <graphic>
+                        <ImageView fx:id="savebuttonicon" fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/savebutton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="openfile" mnemonicParsing="false" onAction="#openfile">
+                  <graphic>
+                        <ImageView fx:id="openbuttonicon" fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/openbutton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="cleanfile" mnemonicParsing="false" onAction="#cleanButton">
+                  <graphic>
+                        <ImageView fx:id="cleanfileicon" fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/cleanbutton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="undobutton" mnemonicParsing="false" onAction="#undoManager">
+                   <graphic>
+                        <ImageView fx:id="undobuttonicon" fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/undobutton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="redobutton" mnemonicParsing="false" onAction="#redoManager">
+                   <graphic>
+                        <ImageView fx:id="redobuttonicon" fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/redobutton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="runbutton" mnemonicParsing="false" onAction="#buildAndRun">
+                     <graphic>
+                        <ImageView fx:id="runbuttonIcon" fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/runbutton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="buildbutton" mnemonicParsing="false" onAction="#buildFile">                 
+                     <graphic>               
+                        <ImageView fx:id="buildbuttonIcon" fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/buildbutton.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  
+              </items>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <TreeView fx:id="treeview" prefHeight="529.0" prefWidth="220.0" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Console">
+               <content>
+                  <StyleClassedTextArea fx:id="output" editable="false" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/output.css">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding></StyleClassedTextArea>
+               </content>
+              
+          </Tab>        
+        </tabs>
+      </TabPane>
+   </bottom>
+   <center>
+      <TabPane fx:id="tabpane" prefHeight="533.0" prefWidth="397.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tab" text="Untitled">
+             
+            <content>
+             
+                       
+                        <CodeArea fx:id="mainTextArea" layoutX="47.0" prefHeight="489.0" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <stylesheets>
+                              <URL value="@../css/mainTextView.css" />
+                              <URL value="@../css/caret.css" />
+                              <URL value="@../css/linecount.css" />
+                              <URL value="@../css/codeAreaStyles.css" />
+                           </stylesheets></CodeArea>
+                     
+            </content>              
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
