@@ -462,26 +462,28 @@ public class FXMLDocumentController implements Initializable {
 			temp += line + "\n";
 		}
 		
+		if(!(Utils.getClassName(temp).length() <=0 )) {
+			CodeAreaFinalValues.setTempClassCode(temp);
 		
-		CodeAreaFinalValues.setTempClassCode(temp);
+			Tab tab;
 		
-		Tab tab;
+			Consts.setClassName(Utils.getClassName(temp));
 		
-		Consts.setClassName(Utils.getClassName(temp));
+			Consts.setClassCode("tab"+Consts.getId(),CodeAreaFinalValues.getTempClassCode());					
 		
-		Consts.setClassCode("tab"+Consts.getId(),CodeAreaFinalValues.getTempClassCode());					
+			tab = FXMLLoader.load(getClass().getResource("view/FXMLTabs.fxml"));
+			tab.setClosable(true);
+    		tab.setText(Utils.getClassName(temp));				
+    		tab.setId("tab"+Consts.getId());
+    		Consts.setId();
 		
-		tab = FXMLLoader.load(getClass().getResource("view/FXMLTabs.fxml"));
-		tab.setClosable(true);
-    	tab.setText(Utils.getClassName(temp));				
-    	tab.setId("tab"+Consts.getId());
-    	Consts.setId();
-		
-    	tab.setClosable(true);
+    		tab.setClosable(true);
     	
-		tabpane.getTabs().add(tab);
+		 	tabpane.getTabs().add(tab);
+		}
     	
-		
+		br.close();
+		isr.close();
 		
 		
     	} catch (FileNotFoundException e) {
