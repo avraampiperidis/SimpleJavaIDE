@@ -2,7 +2,7 @@
 a Simple javafx ide using richtextfx 
 
 <img src="./blob/master/screenshot/screenshoot.jpg" width="600" />
-screenshot https://github.com/zeronerone/SimpleJavaIDE/blob/master/screenshot/screenshoot.jpg?raw=true
+screenshot https://github.com/zeronerone/SimpleJavaIDE/screenshot/screenshoot.jpg?raw=true
 <br>
 
 <p>
