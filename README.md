@@ -1,7 +1,7 @@
 # SimpleJavaIDE
 a Simple javafx ide using richtextfx 
 
-<img src="https://github.com/zeronerone/SimpleJavaIDE/screenshot/screenshoot.jpg" width="600" />
+<img src="./screenshot/screenshoot.jpg" width="600" />
 screenshot https://github.com/zeronerone/SimpleJavaIDE/screenshot/screenshoot.jpg?raw=true
 <br>
 
