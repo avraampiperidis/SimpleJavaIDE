@@ -57,7 +57,7 @@ import org.reactfx.value.SuspendableVar;
 import org.reactfx.value.Val;
 import org.reactfx.value.Var;
 
-import com.sun.javafx.Utils;
+import com.sun.javafx.util.Utils;
 
 /**
  * Text editing control. Accepts user input (keyboard, mouse) and
