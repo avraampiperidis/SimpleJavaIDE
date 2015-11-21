@@ -1,5 +1,6 @@
 # SimpleJavaIDE
-a Simple javafx ide using richtextfx 
+a Simple javafx ide using richtextfx <br>
+(for educational purpose )
 
 <img src="./screenshot/screenshoot.jpg" width="850" />
 <br>
