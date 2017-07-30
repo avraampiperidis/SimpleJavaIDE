@@ -1,0 +1,19 @@
+
+  
+.styled-text-area  {
+	
+	-fx-background-color: #1D1B1B;	 
+	-fx-font-size: 13px;
+	-fx-font-weight: Bold;   
+    -fx-font-family: Consolas;
+    
+}  
+
+
+.styled-text-area .text {
+	
+    -fx-fill: #FFFFFF;
+    
+}  
+
+
